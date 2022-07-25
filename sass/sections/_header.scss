@@ -4,8 +4,14 @@
 }
 
 .header__container {
-  display: flex;
-  align-items: center;
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .header__logo-menu {
@@ -13,9 +19,19 @@
   align-items: center;
 }
 
+//  TABLET-DESKTOP меню Студія-Портфоліо-Контакти
 .menu {
-  display: flex;
-  margin-left: 93px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    margin-left: 88px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-left: 93px;
+  }
 }
 
 .menu__item {
@@ -57,24 +73,33 @@
   }
 }
 
+//  TABLET-DESKTOP контакти Пошта-Телефон
 .contacts {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    margin-left: auto;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+  }
 }
 
-.contacts__item:not(:last-child) {
-  margin-right: 50px;
+.contacts__item {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
+  }
 }
 
 .contacts__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: $color-text;
@@ -85,18 +110,33 @@
   &:focus {
     color: $color-accent;
   }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 14px;
+  }
 }
 
 .contacts__icon-mail {
-  width: 16px;
-  height: 12px;
+  width: 14px;
+  height: 10px;
   margin-right: 10px;
   fill: currentColor;
+  @media screen and (min-width: 1200px) {
+    width: 16px;
+    height: 12px;
+  }
 }
 
 .contacts__icon-tel {
   width: 10px;
-  height: 16px;
+  height: 14px;
   margin-right: 10px;
   fill: currentColor;
+  @media screen and (min-width: 1200px) {
+    height: 16px;
+  }
 }

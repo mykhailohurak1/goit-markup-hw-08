@@ -1,3 +1,9 @@
+.section__doing {
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+}
+
 .doing {
   display: flex;
   align-items: center;
